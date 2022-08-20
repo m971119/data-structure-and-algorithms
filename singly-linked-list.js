@@ -115,6 +115,34 @@ class SinglyLinkedList {
     this.length--;
     return this;
   }
+
+
+  // 複習！！！
+  reverse() {
+    if (!this.head.next) {
+      return this;
+    }
+    this.tail = this.head;
+    let first = this.head;
+    let second = first.next;
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
+
+    // let currentNode = this.head;
+    // let newList = new SinglyLinkedList(this.head.value);
+    // while (currentNode.next !== null) {
+    //   currentNode = currentNode.next;
+    //   newList.prepend(currentNode.value);
+    // }
+    // return newList;
+  }
 }
 
 // some might implement node as a class
@@ -129,3 +157,4 @@ myLinkedList.printList();
 myLinkedList.remove(2);
 myLinkedList.remove(0);
 myLinkedList.printList();
+myLinkedList.reverse().printList();
