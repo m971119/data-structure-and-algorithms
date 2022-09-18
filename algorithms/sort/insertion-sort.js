@@ -1,4 +1,4 @@
-// Insert item to the previos sorted list
+// Insert item to the previous sorted list
 // Very efficient when sorting "almost sorted list" --> O(n) or even O(1)
 // Worst -  T: O(n^2), S: O(1)
 // Best - T: O(n)
